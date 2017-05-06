@@ -8,7 +8,7 @@ CREATE TABLE lib_resources (
 	title VARCHAR,
 	subject VARCHAR,
 	link VARCHAR,
-	likes INTEGER
+	likes NUMBER
 );
 
 INSERT INTO lib_resources (title, subject, link, likes)

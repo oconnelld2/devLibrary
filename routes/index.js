@@ -12,6 +12,7 @@ var db = require('../queries'); //require queries file
 router.get('/', db.getAllResources);
 router.post('/', db.createResource);
 router.delete('/:id', db.deleteResource);
+router.patch('/:id', db.upVote);
 
 module.exports = router;
 

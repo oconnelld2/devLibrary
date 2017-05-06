@@ -23,7 +23,7 @@ function getAllResources(req,res,next){
 	//selecting db.any to return data to page
 	db.any('select * from lib_resources')
 	.then(function(data) {
-		console.log('work on refrsh', data);
+		console.log('getting all resources ------->', data);
 		res.render('index', {title: 'All resources', data:data })
 	})
 }
@@ -37,8 +37,19 @@ function deleteResource(req,res,next) {
 	});
 }
 
+function upVote (req,res,next) {
+	let getId = req.params.id;
+	console.log('get id', typeof getId);
+	db.none('update lib_resources set likes = $1 where id = $2',
+		[req.body.likes, getId])
+	.then(function() {
+		res.status(200)
+	})
+}
+
 module.exports = {
 	createResource: createResource,
 	getAllResources: getAllResources,
 	deleteResource: deleteResource,
+	upVote: upVote,
 };
