@@ -16,7 +16,6 @@ router.get('/', function(req,res,next) {
 	console.log(challenge);
 	res.json({
 		status: res.status('OK'),
-		Content-type: application/json,
 		challenge: req.body.challenge
 	});
 	res.send('OK');
