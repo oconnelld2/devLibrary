@@ -8,9 +8,19 @@ var db = require('../queries'); //require queries file
 //   res.render('index', { title: 'Express' });
 // });
 
-router.get('/', (req, res, next) => {) {
-	//req.accepts('application/json');
+router.get('/', (req, res, next) => {
+	req.accepts('application/json');
 	//console.log('does this get new item -->', req.params.challenge);
+
+const payload = req.body;
+if (payload.type === 'url_verification') {
+    res.send(payload.challenge);
+  } else {
+    res.status(400).end();
+  }
+}
+
+
 	//res.status(200)
 	//let challenge = req.params.challenge;
 	//let stat = res.status(200);
@@ -19,20 +29,20 @@ router.get('/', (req, res, next) => {) {
 	//console.log('display challenge?-->', challenge);
 
 //const express = require('express');
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 
 //const app = express();
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 
 //app.post('/slack/events', (req, res, next) => {
-  const payload = req.body;
+  //const payload = req.body;
 
-  if (payload.type === 'url_verification') {
+  /*if (payload.type === 'url_verification') {
     res.send(payload.challenge);
   } else {
     res.status(400).end();
   }
-});
+});*/
 
 	//let ct = res.get('Content-type');
 	//console.log('content-type', ct);
