@@ -13,8 +13,15 @@ router.get('/', function(req,res,next) {
 	console.log('does this get new item -->', req.body);
 	res.status(200)
 	let challenge = req.body.challenge;
+	let stat = res.status();
 	console.log(challenge);
-	res.send('OK');
+	let ct = res.get('Content-type');
+	res.send({ 
+		status: stat, 
+		message: 'OK',
+		type: ct
+	});
+
 	req.json();
 	
 })
