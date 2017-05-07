@@ -12,7 +12,7 @@ router.get('/', function (req, res, next) {
 	let body = req.body;
 	console.log('SHow params----->', params);
 	console.log('SHow BODY----->', body);
-	
+	console.log(application/x-www-form-urlencoded);
 	res.send('OK');
 	});
 
