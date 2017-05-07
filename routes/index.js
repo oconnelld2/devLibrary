@@ -18,6 +18,9 @@ router.get('/', function(req,res,next) {
 	console.log('display challenge?-->', challenge);
 	let ct = res.get('Content-type');
 	console.log('content-type', ct);
+
+console.log('REQ PARAMS', req.params);
+
 	res.send('OK');
 
 	req.json();
