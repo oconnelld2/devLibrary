@@ -7,7 +7,7 @@ var db = require('../queries'); //require queries file
 // router.get('/', function(req, res, next) {
 //   res.render('index', { title: 'Express' });
 // });
-router.get('/slack/events', function (req, res, next) {
+router.get('/', function (req, res, next) {
 	let params = req.params;
 	let body = req.body;
 	console.log('SHow params----->', params);
