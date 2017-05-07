@@ -10,10 +10,14 @@ var db = require('../queries'); //require queries file
 
 router.get('/', function(req,res,next) {
 	req.accepts('application/json');
-	console.log(req.body);
+	console.log('does this get new item -->', req.body);
 	res.status(200)
 	res.send('OK');
-	console.log(res.headersSent);
+	console.log('what header do we see -->', res.headersSent)
+	.json({
+		status: '200 OK',
+		message: 'did this work'
+	})
 })
 
 // router.get('/', db.getAllResources);
