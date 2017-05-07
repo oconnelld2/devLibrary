@@ -12,7 +12,9 @@ router.get('/', function(req,res,next) {
 	req.accepts('application/json');
 	console.log('does this get new item -->', req.body);
 	res.status(200)
-	res.send('OK');
+	let challenge = req.body.challenge;
+	console.log(challenge);
+	res.send('OK', challenge);
 	console.log('what header do we see -->', res.headersSent)
 	.json({
 		status: '200 OK',
