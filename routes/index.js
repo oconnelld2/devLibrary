@@ -17,7 +17,6 @@ var db = require('../queries'); //require queries file
 	//console.log('BODY READ----------->>>>>>', req.body.read)
 	//console.log('showing status? -->', stat);
 	//console.log('display challenge?-->', challenge);
-'use strict';
 
 const express = require('express');
 const bodyParser = require('body-parser');
