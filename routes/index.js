@@ -14,7 +14,7 @@ router.post('/slack/events', function (req, res, next) {
 	console.log('SHow BODY----->', body);
 	
 	res.send('OK');
-	}
+	});
 
 
 /*router.get('/', function (req, res, next) {
