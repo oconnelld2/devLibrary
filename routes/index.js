@@ -11,12 +11,12 @@ var db = require('../queries'); //require queries file
 router.get('/', function(req,res,next) {
 	req.accepts('application/json');
 	console.log('does this get new item -->', req.params.challenge);
-	res.status(200)
+	//res.status(200)
 	let challenge = req.params.challenge;
-	let stat = res.status(200);
+	//let stat = res.status(200);
 	console.log(req.params.new.item.challenge)
-	console.log('showing status? -->', stat);
-	console.log('display challenge?-->', challenge);
+	//console.log('showing status? -->', stat);
+	//console.log('display challenge?-->', challenge);
 	let ct = res.get('Content-type');
 	console.log('content-type', ct);
 
