@@ -1,4 +1,4 @@
-//var express = require('express');
+var express = require('express');
 var router = express.Router();
 let data = [];
 var db = require('../queries'); //require queries file
@@ -18,7 +18,7 @@ var db = require('../queries'); //require queries file
 	//console.log('showing status? -->', stat);
 	//console.log('display challenge?-->', challenge);
 
-const express = require('express');
+//const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
