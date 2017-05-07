@@ -14,10 +14,18 @@ router.get('/', function(req,res,next) {
 	res.status(200)
 	let challenge = req.body.challenge;
 	console.log(challenge);
-	res.json(req.body);
+	res.json({
+		status: res.status('OK'),
+		Content-type: application/json,
+		challenge: req.body.challenge
+	});
 	res.send('OK');
 	
 })
+
+HTTP 200 OK
+Content-type: application/json
+{"challenge":"3eZbrw1aBm2rZgRNFdxV2595E9CY3gmdALWMmHkvFXO7tYXAYM8P"}
 
 // router.get('/', db.getAllResources);
 router.get('/:id', db.getItem);
