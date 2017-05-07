@@ -14,12 +14,8 @@ router.get('/', function(req,res,next) {
 	res.status(200)
 	let challenge = req.body.challenge;
 	console.log(challenge);
-	res.send('OK', challenge);
-	console.log('what header do we see -->', res.headersSent)
-	.json({
-		status: '200 OK',
-		message: 'did this work'
-	})
+	res.send('OK');
+	res.json();
 })
 
 // router.get('/', db.getAllResources);
