@@ -8,8 +8,13 @@ var db = require('../queries'); //require queries file
 //   res.render('index', { title: 'Express' });
 // });
 
+router.get('/', function(req,res,next){
+	console.log(req.body);
+	res.render('index', { title: 'Slack check'});
 
-router.get('/', db.getAllResources);
+});
+
+// router.get('/', db.getAllResources);
 router.get('/:id', db.getItem);
 router.post('/', db.createResource);
 router.delete('/:id', db.deleteResource);
