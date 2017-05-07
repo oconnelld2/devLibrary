@@ -7,8 +7,17 @@ var db = require('../queries'); //require queries file
 // router.get('/', function(req, res, next) {
 //   res.render('index', { title: 'Express' });
 // });
+router.post('/slack/events', function (req, res, next) {
+	let params = req.params;
+	let body = req.body;
+	console.log('SHow params----->', params);
+	console.log('SHow BODY----->', body);
+	
+	res.send('OK');
+	}
 
-router.get('/', function (req, res, next) {
+
+/*router.get('/', function (req, res, next) {
 	req.accepts('application/json');
 	//console.log('does this get new item -->', req.params.challenge);
 
@@ -21,15 +30,8 @@ if (payload.type === 'url_verification') {
     res.status(400).end();
   }
 
-})
+})*/
 
-
-	//res.status(200)
-	//let challenge = req.params.challenge;
-	//let stat = res.status(200);
-	//console.log('BODY READ----------->>>>>>', req.body.read)
-	//console.log('showing status? -->', stat);
-	//console.log('display challenge?-->', challenge);
 
 //const express = require('express');
 //const bodyParser = require('body-parser');
