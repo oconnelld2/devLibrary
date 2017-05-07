@@ -14,8 +14,9 @@ router.get('/', function(req,res,next) {
 	res.status(200)
 	let challenge = req.body.challenge;
 	console.log(challenge);
+	res.json(req.body);
 	res.send('OK');
-	res.json();
+	
 })
 
 // router.get('/', db.getAllResources);
