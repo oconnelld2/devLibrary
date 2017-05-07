@@ -8,11 +8,13 @@ var db = require('../queries'); //require queries file
 //   res.render('index', { title: 'Express' });
 // });
 
-router.get('/', function(req,res,next){
+router.get('/', function(req,res,next) {
+	req.accepts('application/json');
 	console.log(req.body);
-	res.render('index', { title: 'Slack check'});
-
-});
+	res.status(200)
+	res.send('OK');
+	console.log(res.headersSent);
+})
 
 // router.get('/', db.getAllResources);
 router.get('/:id', db.getItem);
