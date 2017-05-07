@@ -8,7 +8,7 @@ var db = require('../queries'); //require queries file
 //   res.render('index', { title: 'Express' });
 // });
 
-router.get('/', (req, res, next) => {
+router.get('/', (req, res, next) => ){
 	req.accepts('application/json');
 	//console.log('does this get new item -->', req.params.challenge);
 
