@@ -13,7 +13,7 @@ router.get('/', db.getAllResources);
 router.get('/:id', db.getItem);
 router.post('/', db.createResource);
 router.delete('/:id', db.deleteResource);
-router.patch('/:id', db.upVote);
+router.patch('/:id', db.updateCount);
 
 
 module.exports = router;

@@ -6,8 +6,8 @@ var options = {
 
 let herokuDB = 'postgres://tlyyavrceuuwmc:9c37cfc74584a8d47b0607d08f33943cc6a0d1dcc4841fc8bb76cd340b198008@ec2-23-23-111-171.compute-1.amazonaws.com:5432/df4okhm5kne58j';
 var pgp = require('pg-promise')(options); //require for pg promise and passing options object
-var connectionString = 'postgres://localhost:5432/library_db';
-// var connectionString = process.env.DATABASE_URL;
+// var connectionString = 'postgres://localhost:5432/library_db';
+var connectionString = process.env.DATABASE_URL;
 var db = pgp(connectionString);
 
 function createResource(req,res,next){
@@ -54,7 +54,7 @@ function getItem(req,res,next) {
 	});
 }
 
-function upVote (req,res,next) {
+function updateCount (req,res,next) {
 	// let getId = req.params.id;
 	// console.log('get id', getId);
 	db.none('update lib_resources set likes = $1 where id = $2',
@@ -75,5 +75,5 @@ module.exports = {
 	getAllResources: getAllResources,
 	getItem: getItem,
 	deleteResource: deleteResource,
-	upVote: upVote,
+	updateCount: updateCount,
 };

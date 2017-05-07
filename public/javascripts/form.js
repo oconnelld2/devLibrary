@@ -28,3 +28,21 @@ console.log('parsing int', id);
 		id: id
 	})
 });
+
+$('.downVote').on('click', function(e){
+	e.preventDefault();
+	let x = $(this).siblings('.likes');
+	let y = x.html();
+	let voteCount = parseInt(y);
+	let newNum = voteCount -= 1;
+	let now = $(x).html(newNum)
+	console.log('newNum is -->', newNum);
+
+	let id = $(this).parent().attr('data-id')
+	console.log('id is a -->', typeof id);
+	console.log('parsing int', id);
+	axios.patch('http://localhost:4000/' + id, {
+		likes: newNum,
+		id: id
+	})
+});
