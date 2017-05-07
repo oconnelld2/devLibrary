@@ -8,7 +8,7 @@ var db = require('../queries'); //require queries file
 //   res.render('index', { title: 'Express' });
 // });
 
-router.get('/', (req, res, next) => ){
+router.get('/', function (req, res, next) {
 	req.accepts('application/json');
 	//console.log('does this get new item -->', req.params.challenge);
 
@@ -18,7 +18,8 @@ if (payload.type === 'url_verification') {
   } else {
     res.status(400).end();
   }
-}
+
+})
 
 
 	//res.status(200)
