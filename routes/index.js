@@ -23,10 +23,6 @@ router.get('/', function(req,res,next) {
 	
 })
 
-HTTP 200 OK
-Content-type: application/json
-{"challenge":"3eZbrw1aBm2rZgRNFdxV2595E9CY3gmdALWMmHkvFXO7tYXAYM8P"}
-
 // router.get('/', db.getAllResources);
 router.get('/:id', db.getItem);
 router.post('/', db.createResource);
