@@ -16,11 +16,7 @@ router.get('/', function(req,res,next) {
 	let stat = res.status();
 	console.log(challenge);
 	let ct = res.get('Content-type');
-	res.send({ 
-		status: stat, 
-		message: 'OK',
-		type: ct
-	});
+	res.send('OK');
 
 	req.json();
 	
