@@ -14,14 +14,16 @@ router.get('/', function(req,res,next) {
 	res.status(200)
 	let challenge = req.params.challenge;
 	let stat = res.status(200);
+	console.log(req.params.new.item.challenge)
 	console.log('showing status? -->', stat);
 	console.log('display challenge?-->', challenge);
 	let ct = res.get('Content-type');
 	console.log('content-type', ct);
 
-console.log('REQ PARAMS', req.params);
+  //console.log('REQ PARAMS', req.params);
 
 	res.send('OK');
+
 
 	req.json();
 	
