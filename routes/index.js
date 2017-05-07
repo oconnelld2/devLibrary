@@ -13,6 +13,8 @@ router.get('/', function (req, res, next) {
 	//console.log('does this get new item -->', req.params.challenge);
 
 const payload = req.body;
+
+console.log('CHALLENGE ------>', payload.challenge);
 if (payload.type === 'url_verification') {
     res.send(payload.challenge);
   } else {
