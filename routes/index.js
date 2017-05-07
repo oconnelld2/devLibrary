@@ -13,7 +13,7 @@ router.get('/', function(req,res,next) {
 	console.log('does this get new item -->', req.body);
 	res.status(200)
 	let challenge = req.body.challenge;
-	let stat = res.status();
+	let stat = res.status(200);
 	console.log(challenge);
 	let ct = res.get('Content-type');
 	res.send('OK');
