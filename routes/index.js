@@ -8,7 +8,7 @@ var db = require('../queries'); //require queries file
 //   res.render('index', { title: 'Express' });
 // });
 
-//router.get('/', function(req,res,next) {
+router.get('/', (req, res, next) => {) {
 	//req.accepts('application/json');
 	//console.log('does this get new item -->', req.params.challenge);
 	//res.status(200)
@@ -21,10 +21,10 @@ var db = require('../queries'); //require queries file
 //const express = require('express');
 const bodyParser = require('body-parser');
 
-const app = express();
+//const app = express();
 app.use(bodyParser.json());
 
-app.post('/slack/events', (req, res, next) => {
+//app.post('/slack/events', (req, res, next) => {
   const payload = req.body;
 
   if (payload.type === 'url_verification') {
